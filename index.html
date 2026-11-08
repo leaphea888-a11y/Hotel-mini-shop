@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romdoul Eco - Hotel Amenities Shop</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Battambang', 'Segoe UI', Tahoma, sans-serif; background-color: #f8fafc; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 pb-24">
 
+    <!-- Header -->
+    <header class="bg-emerald-800 text-white p-4 text-center shadow-md sticky top-0 z-50">
+        <h1 class="text-xl font-bold">🌿 Romdoul Eco Hotel Supplies</h1>
+        <p class="text-xs text-emerald-200">សម្ភារបរិក្ខារសណ្ឋាគារ និងផ្ទះសំណាក់គុណភាពខ្ពស់</p>
+    </header>
+
+    <!-- Main Content: Product Catalog -->
+    <main class="max-w-md mx-auto p-4">
+        <h2 class="text-lg font-bold mb-3 text-slate-700">🛒 កាតាឡុកទំនិញ</h2>
+        
+        <div id="product-list" class="grid grid-cols-2 gap-3">
+            <!-- ផលិតផលទី ១ -->
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400" alt="Toothbrush A" class="w-full h-32 object-cover rounded-lg mb-2">
+                <div>
+                    <h3 class="font-bold text-sm text-slate-800">ឈុតច្រាសដុសធ្មេញ ជូ A</h3>
+                    <p class="text-emerald-700 font-bold text-sm mt-1">$0.09</p>
+                </div>
+                <button onclick="addToCart('ឈុតច្រាសដុសធ្មេញ ជូ A', 0.09)" class="mt-3 w-full bg-emerald-700 text-white text-xs py-2 rounded-lg font-medium hover:bg-emerald-800 transition">បន្ថែមទៅកន្ត្រក</button>
+            </div>
+
+            <!-- ផលិតផលទី ២ -->
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400" alt="Toothbrush B" class="w-full h-32 object-cover rounded-lg mb-2">
+                <div>
+                    <h3 class="font-bold text-sm text-slate-800">ឈុតច្រាសដុសធ្មេញ ជូល B</h3>
+                    <p class="text-emerald-700 font-bold text-sm mt-1">$0.08</p>
+                </div>
+                <button onclick="addToCart('ឈុតច្រាសដុសធ្មេញ ជូល B', 0.08)" class="mt-3 w-full bg-emerald-700 text-white text-xs py-2 rounded-lg font-medium hover:bg-emerald-800 transition">បន្ថែមទៅកន្ត្រក</button>
+            </div>
+
+            <!-- ផលិតផលទី ៣ -->
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=400" alt="Comb Set" class="w-full h-32 object-cover rounded-lg mb-2">
+                <div>
+                    <h3 class="font-bold text-sm text-slate-800">ឈុតหวีស្ថិតសិលសាក់</h3>
+                    <p class="text-emerald-700 font-bold text-sm mt-1">$0.06</p>
+                </div>
+                <button onclick="addToCart('ឈុតหวีស្ថិតសិលសាក់', 0.06)" class="mt-3 w-full bg-emerald-700 text-white text-xs py-2 rounded-lg font-medium hover:bg-emerald-800 transition">បន្ថែមទៅកន្ត្រក</button>
+            </div>
+
+            <!-- ផលិតផលទី ៤ -->
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=400" alt="Shower Cap" class="w-full h-32 object-cover rounded-lg mb-2">
+                <div>
+                    <h3 class="font-bold text-sm text-slate-800">មួកងូតទឹក Shower Cap</h3>
+                    <p class="text-emerald-700 font-bold text-sm mt-1">$0.05</p>
+                </div>
+                <button onclick="addToCart('មួកងូតទឹក Shower Cap', 0.05)" class="mt-3 w-full bg-emerald-700 text-white text-xs py-2 rounded-lg font-medium hover:bg-emerald-800 transition">បន្ថែមទៅកន្ត្រក</button>
+            </div>
+
+            <!-- ផលិតផលទី ៥ -->
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400" alt="Cotton Swab" class="w-full h-32 object-cover rounded-lg mb-2">
+                <div>
+                    <h3 class="font-bold text-sm text-slate-800">សំឡីត្បាល់ត្រចៀក Cotton Swab</h3>
+                    <p class="text-emerald-700 font-bold text-sm mt-1">$0.05</p>
+                </div>
+                <button onclick="addToCart('សំឡីត្បាល់ត្រចៀក Cotton Swab', 0.05)" class="mt-3 w-full bg-emerald-700 text-white text-xs py-2 rounded-lg font-medium hover:bg-emerald-800 transition">បន្ថែមទៅកន្ត្រក</button>
+            </div>
+
+            <!-- ផលិតផលទី ៦ -->
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=400" alt="Soap 15g" class="w-full h-32 object-cover rounded-lg mb-2">
+                <div>
+                    <h3 class="font-bold text-sm text-slate-800">សាប៊ូដុំ 15g Soap</h3>
+                    <p class="text-emerald-700 font-bold text-sm mt-1">$0.045</p>
+                </div>
+                <button onclick="addToCart('សាប៊ូដុំ 15g Soap', 0.045)" class="mt-3 w-full bg-emerald-700 text-white text-xs py-2 rounded-lg font-medium hover:bg-emerald-800 transition">បន្ថែមទៅកន្ត្រក</button>
+            </div>
+        </div>
+
+        <!-- Cart Summary Section -->
+        <div class="mt-6 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+            <h3 class="font-bold text-slate-700 mb-2">📦 កន្ត្រកទំនិញរបស់អ្នក</h3>
+            <div id="cart-items" class="text-sm text-slate-600 mb-3">គ្មានទំនិញក្នុងកន្ត្រកទេ</div>
+            <div class="flex justify-between font-bold text-base border-t pt-2 border-slate-100">
+                <span>សរុបទឹកប្រាក់៖</span>
+                <span id="total-price" class="text-emerald-700">$0.00</span>
+            </div>
+        </div>
+
+        <!-- Checkout Form -->
+        <div class="mt-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+            <h3 class="font-bold text-slate-700 mb-3">📝 ព័ត៌មានសម្រាប់ការបញ្ជាទិញ</h3>
+            <div class="space-y-3">
+                <div>
+                    <label class="text-xs text-slate-500">ឈ្មោះអ្នកទិញ / សណ្ឋាគារ</label>
+                    <input type="text" id="name" class="w-full mt-1 p-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-emerald-600" placeholder="បញ្ចូលឈ្មោះ...">
+                </div>
+                <div>
+                    <label class="text-xs text-slate-500">លេខទូរស័ព្ទ</label>
+                    <input type="tel" id="phone" class="w-full mt-1 p-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-emerald-600" placeholder="បញ្ចូលលេខទូរស័ព្ទ...">
+                </div>
+                <div>
+                    <label class="text-xs text-slate-500">អាសយដ្ឋាន ឬ លេខបន្ទប់</label>
+                    <input type="text" id="address" class="w-full mt-1 p-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-emerald-600" placeholder="បញ្ចូលអាសយដ្ឋាន...">
+                </div>
+                <button onclick="checkout()" class="w-full bg-emerald-700 text-white py-3 rounded-xl font-bold hover:bg-emerald-800 transition shadow-md">បញ្ជូនការកុម្ម៉ង់ទិញ (Checkout)</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+
+        let cart = [];
+
+        function addToCart(name, price) {
+            let item = cart.find(i => i.name === name);
+            if (item) {
+                item.qty++;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            let cartContainer = document.getElementById('cart-items');
+            let totalPriceEl = document.getElementById('total-price');
+            
+            if (cart.length === 0) {
+                cartContainer.innerHTML = 'គ្មានទំនិញក្នុងកន្ត្រកទេ';
+                totalPriceEl.innerHTML = '$0.00';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                let subTotal = item.price * item.qty;
+                total += subTotal;
+                html += `<div class="flex justify-between items-center py-1 border-b border-slate-50 text-xs">
+                    <span>${item.name} (x${item.qty})</span>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-medium">$${subTotal.toFixed(3)}</span>
+                        <button onclick="removeItem(${index})" class="text-red-500 font-bold px-1">✕</button>
+                    </div>
+                </div>`;
+            });
+            cartContainer.innerHTML = html;
+            totalPriceEl.innerHTML = $${total.toFixed(3)};
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('សូមជ្រើសរើសទំនិញសិន!');
+                return;
+            }
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let address = document.getElementById('address').value;
+
+            if (!name || !phone) {
+                alert('សូមបំពេញឈ្មោះ និងលេខទូរស័ព្ទឱ្យបានត្រឹមត្រូវ!');
+                return;
+            }
+
+            let orderData = {
+                customer_name: name,
+                phone: phone,
+                address: address,
+                items: cart,
+                total: document.getElementById('total-price').innerText
+            };
+
+            tg.sendData(JSON.stringify(orderData));
+            tg.close();
+        }
+    </script>
+</body>
+</html>
